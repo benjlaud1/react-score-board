@@ -3,14 +3,13 @@
 */
 
 import React from 'react';
+import Header from './Header.jsx'
 
 export default class App extends React.Component {
     render() {
         return (
             <div className="scoreboard">
-                <div className="header">
-                    <h1>{this.props.title}</h1>
-                </div>
+                <Header title={this.props.title}/>
                 <div className="players">
                     <div className="player">
                         <div className="player-name">
@@ -28,4 +27,12 @@ export default class App extends React.Component {
             </div>
         );
     }
+}
+
+App.propTypes = {
+    title: React.PropTypes.string
+}
+
+App.defaultProps = {
+    title: "Scoreboard"
 }

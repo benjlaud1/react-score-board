@@ -3,7 +3,8 @@
 */
 
 import React from 'react';
-import Header from './Header.jsx'
+import Header from './Header.jsx';
+import Player from './Player.jsx';
 
 export default class App extends React.Component {
     render() {
@@ -11,18 +12,7 @@ export default class App extends React.Component {
             <div className="scoreboard">
                 <Header title={this.props.title}/>
                 <div className="players">
-                    <div className="player">
-                        <div className="player-name">
-                            Ben Lauderbaugh
-                        </div>
-                        <div className="player-score">
-                            <div className="counter">
-                                <button className="counter-action decrement"> - </button>
-                                <div className="counter-score">31</div>
-                                <button className="counter-action increment"> + </button>
-                            </div>
-                        </div>
-                    </div>
+                    <Player name={this.props.name} score={this.props.score}/>
                 </div>
             </div>
         );
@@ -30,9 +20,13 @@ export default class App extends React.Component {
 }
 
 App.propTypes = {
-    title: React.PropTypes.string
+    title: React.PropTypes.string.isRequired,
+    name: React.PropTypes.string.isRequired,
+    score: React.PropTypes.number
 }
 
 App.defaultProps = {
-    title: "Scoreboard"
+    title: "Scoreboard",
+    name: "-",
+    score: 0
 }

@@ -7,4 +7,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App.jsx';
 
-ReactDOM.render( <App name="Ben Lauderbaugh" score={30}/>, document.getElementById('root') );
+const PLAYERS = [
+    {
+        name: "Ben Lauderbaugh",
+        score: 35
+    },
+    {
+        name: "Cayla Lauderbaugh",
+        score: 36
+    },
+    {
+        name: "Victoria Lauderbaugh",
+        score: 30
+    },
+]
+
+ReactDOM.render( <App players={PLAYERS}/>, document.getElementById('root') );

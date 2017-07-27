@@ -12,7 +12,7 @@ export default class App extends React.Component {
             <div className="scoreboard">
                 <Header title={this.props.title}/>
                 <div className="players">
-                    <Player name={this.props.name} score={this.props.score}/>
+                    <Player players={this.props.players}/>
                 </div>
             </div>
         );
@@ -21,12 +21,18 @@ export default class App extends React.Component {
 
 App.propTypes = {
     title: React.PropTypes.string.isRequired,
-    name: React.PropTypes.string.isRequired,
-    score: React.PropTypes.number
+    players: React.PropTypes.arrayOf(React.PropTypes.shape({
+        name: React.PropTypes.string.isRequired,
+        score: React.PropTypes.number.isRequired
+    })).isRequired
 }
 
 App.defaultProps = {
     title: "Scoreboard",
-    name: "-",
-    score: 0
+    players: [
+        {
+            name: "-",
+            score: 0
+        }
+    ]
 }

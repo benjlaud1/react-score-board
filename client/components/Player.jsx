@@ -10,10 +10,10 @@ export default class Player extends React.Component {
         return (
             <div className="player">
                 <div className="player-name">
-                    {this.props.players[0].name}
+                    {this.props.name}
                 </div>
                 <div className="player-score">
-                    <Counter score={this.props.players[0].score}/>
+                    <Counter score={this.props.score}/>
                 </div>
             </div>
         )

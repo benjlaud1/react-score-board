@@ -7,6 +7,17 @@ import Header from './Header.jsx';
 import Player from './Player.jsx';
 
 export default class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            title: "Scoreboard",
+            players: [{
+                name: "-",
+                score: 0,
+                id: 0
+            }]
+        }
+    }
     render() {
         return (
             <div className="scoreboard">
@@ -28,26 +39,4 @@ App.propTypes = {
         score: React.PropTypes.number.isRequired,
         id: React.PropTypes.number.isRequired,
     })).isRequired
-}
-
-App.getInitialState = function () {
-    return {
-        title: "Scoreboard",
-        players: {
-            name: "-",
-            score: 0,
-            id: 0
-        }
-    }
-}
-
-App.defaultProps = {
-    title: "Scoreboard",
-    players: [
-        {
-            name: "-",
-            score: 0,
-            id: 0,
-        }
-    ]
 }

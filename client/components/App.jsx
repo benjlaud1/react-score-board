@@ -40,3 +40,7 @@ App.propTypes = {
         id: React.PropTypes.number.isRequired,
     })).isRequired
 }
+
+App.defaultProps = {
+    title: ""
+}

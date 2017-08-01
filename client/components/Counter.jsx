@@ -8,8 +8,11 @@ export default class Counter extends React.Component {
     constructor(props) {
         super(props);
         this.incrementScore = function (e) {
-            e.setState({
-                score: (e.state.score + 1)
+            console.log('====================================');
+            console.log(e);
+            console.log('====================================');
+            this.setState({
+                score: (this.state.score + 1)
             })
         }
     }

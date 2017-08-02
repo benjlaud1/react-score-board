@@ -17,14 +17,22 @@ export default class App extends React.Component {
                 id: 0
             }]
         }
+        this.changeScore = this.changeScore;
     }
+
+    changeScore(newScore) {
+        this.setState({
+            score: newScore
+        })
+    }
+
     render() {
         return (
             <div className="scoreboard">
                 <Header title={this.state.title}/>
                 <div className="players">
                     {this.state.players.map(function (player) {
-                        return <Player name={player.name} score={player.score} key={player.id}/>
+                        return <Player name={player.name} score={player.score} key={player.id} onChange={this.changeScore}/>
                     })}
                 </div>
             </div>

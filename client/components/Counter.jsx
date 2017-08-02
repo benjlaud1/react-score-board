@@ -7,14 +7,12 @@ import React from 'react';
 export default class Counter extends React.Component {
     constructor(props) {
         super(props);
-        this.incrementScore = function (e) {
-            console.log('====================================');
-            console.log(e);
-            console.log('====================================');
-            this.setState({
-                score: (this.state.score + 1)
-            })
-        }
+        this.incrementScore = this.incrementScore.bind(this);
+    }
+
+    incrementScore(e) {
+        const score = this.props.score + 1;
+        this.props.onChange(score)
     }
     render() {
         return (

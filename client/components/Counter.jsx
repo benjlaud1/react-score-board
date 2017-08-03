@@ -11,6 +11,9 @@ export default class Counter extends React.Component {
     }
 
     incrementScore(e) {
+        console.log('====================================');
+        console.log(e._targetInst);
+        console.log('====================================');
         const score = this.props.score + 1;
         this.props.onChange(score)
     }

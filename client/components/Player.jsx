@@ -12,6 +12,12 @@ export default class Player extends React.Component {
     }
 
     changeScore(newScore) {
+        console.log('====================================');
+        console.log('newScore:', newScore);
+        console.log('====================================');
+        console.log('====================================');
+        console.log('this:', this);
+        console.log('====================================');
         this.props.onChange(newScore);
     }
 

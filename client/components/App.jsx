@@ -5,6 +5,12 @@
 import React from 'react';
 import Header from './Header.jsx';
 import Player from './Player.jsx';
+const players = [
+    {
+        name: "ben",
+        score: 30
+    }
+]
 
 export default class App extends React.Component {
     constructor(props) {
@@ -14,15 +20,22 @@ export default class App extends React.Component {
             players: [{
                 name: "-",
                 score: 0,
-                id: 0
+                id: 0,
+                changeScore(newScore) {
+                    console.log('====================================');
+                    console.log('newScore:', newScore);
+                    console.log('====================================');
+                    this.score.setState({
+                        score: newScore
+                    });
+                } 
             }]
-        }
-        this.changeScore = this.changeScore;
+        };
     }
 
-    changeScore(newScore) {
+    changePlayerScore(newScore) {
         this.setState({
-            score: newScore
+            playersscore:
         })
     }
 
@@ -32,7 +45,7 @@ export default class App extends React.Component {
                 <Header title={this.state.title}/>
                 <div className="players">
                     {this.state.players.map(function (player) {
-                        return <Player name={player.name} score={player.score} key={player.id} onChange={this.changeScore}/>
+                        return <Player name={player.name} score={player.score} key={player.id} onChange={player.changeScore}/>
                     })}
                 </div>
             </div>

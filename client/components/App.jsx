@@ -5,20 +5,20 @@
 import React from 'react';
 import Header from './Header.jsx';
 import Player from './Player.jsx';
-const players = [
-    {
-        name: "ben",
-        score: 30,
-        id: 1
-    }
-]
+// const players = [
+//     {
+//         name: "ben",
+//         score: 30,
+//         id: 1
+//     }
+// ]
 
 export default class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             title: "Scoreboard",
-            players: players
+            players: this.props.players
         };
     }
 
@@ -46,5 +46,10 @@ App.propTypes = {
 }
 
 App.defaultProps = {
-    title: ""
+    title: "",
+    players: [{
+        name: "-",
+        score: 0,
+        id: 0
+    }]
 }

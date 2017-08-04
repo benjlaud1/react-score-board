@@ -8,27 +8,27 @@ import Counter from './Counter.jsx';
 export default class Player extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            name: this.props.name,
+            score: this.props.score,
+        };
         this.changeScore = this.changeScore.bind(this);
     }
 
     changeScore(newScore) {
-        console.log('====================================');
-        console.log('newScore:', newScore);
-        console.log('====================================');
-        console.log('====================================');
-        console.log('this:', this);
-        console.log('====================================');
-        this.props.onChange(newScore);
+        this.setState({
+            score: newScore
+        })
     }
 
     render() {
         return (
             <div className="player">
                 <div className="player-name">
-                    {this.props.name}
+                    {this.state.name}
                 </div>
                 <div className="player-score">
-                    <Counter score={this.props.score} onChange={this.changeScore}/>
+                    <Counter score={this.state.score} onChange={this.changeScore}/>
                 </div>
             </div>
         )

@@ -8,7 +8,8 @@ import Player from './Player.jsx';
 const players = [
     {
         name: "ben",
-        score: 30
+        score: 30,
+        id: 1
     }
 ]
 
@@ -17,26 +18,8 @@ export default class App extends React.Component {
         super(props);
         this.state = {
             title: "Scoreboard",
-            players: [{
-                name: "-",
-                score: 0,
-                id: 0,
-                changeScore(newScore) {
-                    console.log('====================================');
-                    console.log('newScore:', newScore);
-                    console.log('====================================');
-                    this.score.setState({
-                        score: newScore
-                    });
-                } 
-            }]
+            players: players
         };
-    }
-
-    changePlayerScore(newScore) {
-        this.setState({
-            playersscore:
-        })
     }
 
     render() {
@@ -45,7 +28,7 @@ export default class App extends React.Component {
                 <Header title={this.state.title}/>
                 <div className="players">
                     {this.state.players.map(function (player) {
-                        return <Player name={player.name} score={player.score} key={player.id} onChange={player.changeScore}/>
+                        return <Player name={player.name} score={player.score} key={player.id}/>
                     })}
                 </div>
             </div>

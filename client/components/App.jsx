@@ -5,27 +5,28 @@
 import React from 'react';
 import Header from './Header.jsx';
 import Player from './Player.jsx';
-// const players = [
-//     {
-//         name: "ben",
-//         score: 30,
-//         id: 1
-//     }
-// ]
+const players = [
+    {
+        name: "ben",
+        score: 30,
+        id: 1
+    }
+]
 
 export default class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             title: "Scoreboard",
-            players: this.props.players
+            playerCount: this.props.players.length,
+            players: this.props.players,
         };
     }
 
     render() {
         return (
             <div className="scoreboard">
-                <Header title={this.state.title}/>
+                <Header title={this.state.title} playerCount={this.state.playerCount}/>
                 <div className="players">
                     {this.state.players.map(function (player) {
                         return <Player name={player.name} score={player.score} key={player.id}/>

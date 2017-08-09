@@ -9,7 +9,7 @@ export default class Header extends React.Component {
     render() {
         return (
             <div className="header">
-                <Stats playerCount={this.props.playerCount}/>
+                <Stats playerCount={this.props.playerCount} scoreTotal={this.props.scoreTotal}/>
                 <h1>{this.props.title}</h1>
             </div>
         )

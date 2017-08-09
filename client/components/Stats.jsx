@@ -21,7 +21,7 @@ export default class Stats extends React.Component {
                     </tr>
                     <tr>
                         <td>Total Points:</td>
-                        <td>123</td>
+                        <td>{this.props.scoreTotal}</td>
                     </tr>
                 </tbody>
             </table>

@@ -11,17 +11,17 @@ const PLAYERS = [
     {
         name: "Ben Lauderbaugh",
         score: 35,
-        id: 1,
+        id: 0,
     },
     {
         name: "Cayla Lauderbaugh",
         score: 36,
-        id: 2,
+        id: 1,
     },
     {
         name: "Victoria Lauderbaugh",
         score: 30,
-        id: 3,
+        id: 2,
     },
     {
         name: "Ottoleigh Lauderbaugh",
@@ -30,4 +30,12 @@ const PLAYERS = [
     },
 ]
 
-ReactDOM.render( <App players={PLAYERS}/>, document.getElementById('root') );
+const addPlayer = (addName) => {
+    PLAYERS.push({
+        name: addName,
+        score: 0,
+        id: PLAYERS.length
+    })
+}
+
+ReactDOM.render( <App players={PLAYERS} addPlayer={addPlayer}/>, document.getElementById('root') );

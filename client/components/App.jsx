@@ -5,13 +5,8 @@
 import React from 'react';
 import Header from './Header.jsx';
 import Player from './Player.jsx';
-const players = [
-    {
-        name: "ben",
-        score: 30,
-        id: 1
-    }
-]
+
+let addedScores = 0
 
 export default class App extends React.Component {
     constructor(props) {
@@ -19,6 +14,7 @@ export default class App extends React.Component {
         this.state = {
             title: "Scoreboard",
             playerCount: this.props.players.length,
+            scoreTotal: this.props.players.map((player) => player.score).reduce((a, b) => a + b, 0),
             players: this.props.players,
         };
     }
@@ -26,7 +22,7 @@ export default class App extends React.Component {
     render() {
         return (
             <div className="scoreboard">
-                <Header title={this.state.title} playerCount={this.state.playerCount}/>
+                <Header title={this.state.title} playerCount={this.state.playerCount} scoreTotal={this.state.scoreTotal}/>
                 <div className="players">
                     {this.state.players.map(function (player) {
                         return <Player name={player.name} score={player.score} key={player.id}/>

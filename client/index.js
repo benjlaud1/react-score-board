@@ -28,13 +28,18 @@ const PLAYERS = [
         score: 26,
         id: 4,
     },
+    {
+        name: "Biddy",
+        score: 20,
+        id: 5,
+    },
 ]
 
 const addPlayer = (addName) => {
     PLAYERS.push({
         name: addName,
         score: 0,
-        id: PLAYERS.length
+        id: PLAYERS.length,
     })
 }
 

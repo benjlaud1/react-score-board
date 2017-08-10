@@ -16,6 +16,7 @@ export default class Player extends React.Component {
     }
 
     changeScore(newScore) {
+        this.props.onChange;
         this.setState({
             score: newScore
         })

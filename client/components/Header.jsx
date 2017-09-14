@@ -4,6 +4,7 @@
 
 import React from 'react';
 import Stats from './Stats.jsx';
+import Stopwatch from './Stopwatch.jsx';
 
 export default class Header extends React.Component {
     constructor(props) {
@@ -15,6 +16,7 @@ export default class Header extends React.Component {
             <div className="header">
                 <Stats playerCount={this.props.players.length} scoreTotal={this.scoreTotal}/>
                 <h1>{this.props.title}</h1>
+                <Stopwatch />
             </div>
         )
     }

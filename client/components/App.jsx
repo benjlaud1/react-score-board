@@ -4,7 +4,7 @@
 
 import React from 'react';
 import Header from './Header.jsx';
-import Player from './Player.jsx';
+import Player from './Player.jsx'; 
 
 export default class App extends React.Component {
     constructor(props) {

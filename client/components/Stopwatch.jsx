@@ -20,12 +20,12 @@ export default class Stopwatch extends React.Component {
             startStop = <button>Start</button>
         }
         return (
-            <div className="stopwatch">
-                <h2>Stopwatch</h2>
-                <div className="stopwatch-time">0</div>
-                { startStop }
-                <button>Reset</button>
-            </div>
+        <div className="stopwatch">
+            <h2>Stopwatch</h2>
+            <div className="stopwatch-time">0</div>
+            { startStop }
+            <button>Reset</button>
+        </div>
         )
     }
 
